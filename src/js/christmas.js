@@ -124,3 +124,24 @@ $(function(){
 	}
 });
 
+
+$(document).ready(function(){
+		$("#submit").click(function(){
+			var info = {};
+			info.name = $("#name").children().val();
+			info.wish = $("#wish").children().val();
+			console.log(info);
+			$.ajax({
+				url:'/get_state',
+				type:'post',
+				success:function(data) {
+					console.log(data);
+					alert("提交成功ヽ(●´∀`●)ﾉ");
+				},
+				failed:function() {
+					console.log("gg");
+				}
+			});
+		});
+	}
+);

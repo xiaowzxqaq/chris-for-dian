@@ -85,8 +85,8 @@ $(function(){
 	//资源预加载
 	var preload={},
 		$loading=$(".loading-mask"),
-		path=ISPRO ? "dist" : "src";
-
+		//path=ISPRO ? "dist" : "src";
+		path = "dist";
 	//图片集合
 	preload.imgs=[
 		path+'/images/car.png',
@@ -134,12 +134,15 @@ $(document).ready(function(){
 			$.ajax({
 				url:'/get_state',
 				type:'post',
+				data:info,
 				success:function(data) {
 					console.log(data);
 					alert("提交成功ヽ(●´∀`●)ﾉ");
+					
 				},
 				failed:function() {
 					console.log("gg");
+					alert("提交失败orz");
 				}
 			});
 		});

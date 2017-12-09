@@ -131,7 +131,7 @@ $(document).ready(function(){
 			info.name = $("#name").children().val();
 			info.wish = $("#wish").children().val();
 			if (info.name.length == 0 | info.wish.length == 0)	{
-				alert("信息不能为空哦~");
+				alert("信息不能为空哦~");			
 				return;
 			}
 			$.ajax({
@@ -145,6 +145,8 @@ $(document).ready(function(){
 						return;
 					}
 					alert("提交成功ヽ(●´∀`●)ﾉ");
+				$(".card").remove();
+				$(".showcard").remove();
 				},
 				failed:function() {
 					console.log("gg");

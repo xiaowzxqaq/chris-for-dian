@@ -130,6 +130,9 @@ $(document).ready(function(){
 			var info = {};
 			info.name = $("#name").children().val();
 			info.wish = $("#wish").children().val();
+			if (info.name.length == 0 | info.wish.length == 0)	{
+				alert("信息不能为空哦~");
+			}
 			console.log(info);
 			$.ajax({
 				url:'/get_state',

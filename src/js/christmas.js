@@ -134,17 +134,16 @@ $(document).ready(function(){
 				alert("信息不能为空哦~");
 				return;
 			}
-			console.log(info);
 			$.ajax({
 				url:'/get_state',
 				type:'post',
 				data:info,
 				success:function(data) {
+					console.log(data.code);
 					if (data.code == -1) {
 						alert("提交失败OvO");
 						return;
 					}
-					console.log(data.code);
 					alert("提交成功ヽ(●´∀`●)ﾉ");
 				},
 				failed:function() {

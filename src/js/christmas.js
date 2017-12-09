@@ -132,6 +132,7 @@ $(document).ready(function(){
 			info.wish = $("#wish").children().val();
 			if (info.name.length == 0 | info.wish.length == 0)	{
 				alert("信息不能为空哦~");
+				return;
 			}
 			console.log(info);
 			$.ajax({
@@ -139,9 +140,12 @@ $(document).ready(function(){
 				type:'post',
 				data:info,
 				success:function(data) {
+					if (data == -1) {
+						alert("提交失败OvO");
+						return;
+					}
 					console.log(data);
 					alert("提交成功ヽ(●´∀`●)ﾉ");
-					
 				},
 				failed:function() {
 					console.log("gg");

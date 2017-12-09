@@ -140,11 +140,11 @@ $(document).ready(function(){
 				type:'post',
 				data:info,
 				success:function(data) {
-					if (data == -1) {
+					if (data.code == -1) {
 						alert("提交失败OvO");
 						return;
 					}
-					console.log(data);
+					console.log(data.code);
 					alert("提交成功ヽ(●´∀`●)ﾉ");
 				},
 				failed:function() {
